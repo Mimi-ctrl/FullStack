@@ -4,24 +4,32 @@ const Header = ({title}) => <h1>{title}</h1>
 
 const Button = ({handleClick, text}) => <button onClick={handleClick}>{text}</button>
 
+const StatisticLine = ({text, value}) => {
+  if(text==='positive'){
+    return(
+      <p>{text} {value} %</p>
+    )
+  }
+  else{
+    return (
+      <p>{text} {value}</p>
+    )
+  }
+}
+
 const Statistics = (props) => {
   const total = props.good + props.neutral + props.bad
-  let average = 0
-  let positive = 0
-  if (total != 0) {
-    average = (props.good - props.bad)/total
-    positive = (1-(props.bad + props.neutral)/total) * 100
-  }
-  
   if (total != 0){
+    const average = (props.good - props.bad)/total
+    const positive = (1-(props.bad + props.neutral)/total) * 100
     return(
       <div>
-        <p>good {props.good}</p>
-        <p>neutral {props.neutral}</p>
-        <p>bad {props.bad}</p>
-        <p>all {total}</p>
-        <p>average {average}</p>
-        <p>positive {positive} %</p>
+        <StatisticLine text='good' value={props.good}/>
+        <StatisticLine text='neutral' value={props.neutral}/>
+        <StatisticLine text='bad' value={props.bad}/>
+        <StatisticLine text='all' value={total}/>
+        <StatisticLine text='average' value={average}/>
+        <StatisticLine text='positive' value={positive}/>
       </div>
     )
   }
