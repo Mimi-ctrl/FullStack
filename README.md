@@ -6,3 +6,4 @@
 ## Osa 1
 * ### [kurssitiedot](https://github.com/Mimi-ctrl/FullStack-2022/tree/main/osa1/kurssitiedot)
 * ### [unicafe](https://github.com/Mimi-ctrl/FullStack-2022/tree/main/osa1/unicafe)
+* ### [anekdootit](https://github.com/Mimi-ctrl/FullStack-2022/tree/main/osa1/anekdootit)
