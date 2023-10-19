@@ -7,4 +7,6 @@
 * ### [Kurssitiedot](https://github.com/Mimi-ctrl/FullStack_2022-2023/tree/main/osa1/kurssitiedot)
 * ### [Unicafe](https://github.com/Mimi-ctrl/FullStack_2022-2023/tree/main/osa1/unicafe)
 * ### [Anekdootit](https://github.com/Mimi-ctrl/FullStack_2022-2023/tree/main/osa1/anekdootit)
+## Osa 2
+
 
