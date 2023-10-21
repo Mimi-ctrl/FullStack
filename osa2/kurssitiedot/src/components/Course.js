@@ -42,6 +42,6 @@ const Total = ({parts}) => {
         </h4>
       </>
     )
-  }
+}
 
 export default Course
