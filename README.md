@@ -1,4 +1,4 @@
-# Full Stack open 2022-2023
+# Full Stack Open
 ## Osa 0
 * ### [0.4](https://github.com/Mimi-ctrl/FullStack-2022/blob/main/osa0/0.4.md)
 * ### [0.5](https://github.com/Mimi-ctrl/FullStack-2022/blob/main/osa0/0.5.md)
