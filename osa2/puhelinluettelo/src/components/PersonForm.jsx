@@ -7,7 +7,14 @@ const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNum
         number: <input value={newNumber} onChange={handleNumberChange} />
       </div>
       <div>
-        <button type="submit">add</button>
+        <button 
+          type="submit"
+          style={{
+            backgroundColor: 'blue',
+            borderRadius: '5px', 
+            color: 'red', 
+          }}
+          >add</button>
       </div>
     </form>
   )
