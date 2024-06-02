@@ -21,6 +21,10 @@ const App = () => {
       })
       .catch(error => {
         console.error('Error fetching data:', error)
+        setNotification({ message: 'Error fetching data', type: 'error' })
+        setTimeout(() => {
+          setNotification({ message: null, type: '' })
+        }, 5000)
       })
   }, [])
 
@@ -46,6 +50,14 @@ const App = () => {
             }, 5000)
             setNewName('')
             setNewNumber('')
+          })
+          .catch(error => {
+            setNotification({ message: `Information of ${newName} has already been removed from server`, type: 'error' })
+            setTimeout(() => {
+              setNotification({ message: null, type: '' })
+            }, 5000)
+            setPersons(persons.filter(p => p.id !== person.id))
+            console.error('Error updating person:', error)
           })
       }
     } else {
@@ -80,6 +92,14 @@ const App = () => {
           setTimeout(() => {
             setNotification({ message: null, type: '' })
           }, 5000)
+        })
+        .catch(error => {
+          setNotification({ message: `Information of ${person.name} has already been removed from server`, type: 'error' })
+          setTimeout(() => {
+            setNotification({ message: null, type: '' })
+          }, 5000)
+          setPersons(persons.filter(p => p.id !== id))
+          console.error('Error deleting person:', error)
         })
     }
   }
