@@ -3,12 +3,15 @@ import FilterForm from './components/FilterForm'
 import PersonForm from './components/PersonForm'
 import Person from './components/Person'
 import personsService from './services/persons'
+import Notification from './components/Notification'
+import './App.css'
 
 const App = () => {
   const [persons, setPersons] = useState([])
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [show, setShow] = useState('')
+  const [notification, setNotification] = useState({ message: null, type: '' })
 
   useEffect(() => {
     personsService
@@ -34,6 +37,13 @@ const App = () => {
           .update(person.id, nameObject)
           .then(updatePerson => {
             setPersons(persons.map(per => per.id !== person.id ? per : updatePerson))
+            setNotification({
+              message: `Updated ${newName}'s number`,
+              type: 'success'
+            })
+            setTimeout(() => {
+              setNotification({ message: null, type: '' })
+            }, 5000)
             setNewName('')
             setNewNumber('')
           })
@@ -43,6 +53,13 @@ const App = () => {
         .create(nameObject)
         .then(returnedPerson => {
           setPersons(persons.concat(returnedPerson))
+          setNotification({
+            message: `Added ${newName}`,
+            type: 'success'
+          })
+          setTimeout(() => {
+            setNotification({ message: null, type: '' })
+          }, 5000)
           setNewName('')
           setNewNumber('')
         })
@@ -56,6 +73,13 @@ const App = () => {
         .remove(id)
         .then(() => {
           setPersons(persons.filter(p => p.id !== id))
+          setNotification({
+            message: `Deleted ${person.name}`,
+            type: 'success'
+          })
+          setTimeout(() => {
+            setNotification({ message: null, type: '' })
+          }, 5000)
         })
     }
   }
@@ -79,6 +103,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={notification.message} type={notification.type} />
       <FilterForm show={show} handleShowChange={handleShowChange} />
       <h2>add a new</h2>    
       <PersonForm

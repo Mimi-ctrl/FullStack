@@ -4,9 +4,9 @@ const Person = ({ person, deletePerson}) => (
     <button 
       onClick={deletePerson}
       style={{
-        backgroundColor: 'red',
+        backgroundColor: 'white',
         borderRadius: '5px', 
-        color: 'blue', 
+        color: 'red', 
       }}
       >delete</button>  
   </div>
