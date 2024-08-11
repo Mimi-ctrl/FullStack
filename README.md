@@ -11,4 +11,4 @@
 * ### [Kurssitiedot](https://github.com/Mimi-ctrl/FullStack_2022-2023/tree/main/osa2/kurssitiedot)
 * ### [Puhelinluettelo](https://github.com/Mimi-ctrl/FullStack_2022-2023/tree/main/osa2/puhelinluettelo)
 ## Osa 3
-* ### [Puhelinluettelon backend](https://github.com/Mimi-ctrl/FullStack_osa3)
+* ### [Puhelinluettelon backend](https://github.com/Mimi-ctrl/FullStack_osa3/tree/main/puhelinluettelon_backend)
